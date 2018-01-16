@@ -13,12 +13,12 @@ window.onload = function() {
         timer = null;
 
     //手机菜单导航
-    $mnav.onclick = function(){  
+    $mnav.onclick = function() {
         var navOpen = $mainMenu.getAttribute("class");
-        if(navOpen.indexOf("in") != '-1'){
-            $mainMenu.setAttribute("class","collapse navbar-collapse"); 
+        if (navOpen.indexOf("in") != '-1') {
+            $mainMenu.setAttribute("class", "collapse navbar-collapse");
         } else {
-            $mainMenu.setAttribute("class","collapse navbar-collapse in");
+            $mainMenu.setAttribute("class", "collapse navbar-collapse in");
         }
     };
 
@@ -40,7 +40,7 @@ window.onload = function() {
             };
             isPC = false;
         } else {
-        	document.documentElement.style.fontSize = '610%'
+            document.documentElement.style.fontSize = '610%';
         };
     })(450 / 100);
 
@@ -82,7 +82,7 @@ window.onload = function() {
         if ($process) {
             $process.style.width = (getScrollTop() / ($body.scrollHeight - window.innerHeight)) * 100 + "%";
         }
-        (isPC && getScrollTop() >= 300) ? $backToTop.removeAttribute("class","hide") : $backToTop.setAttribute("class","hide");
+        (isPC && getScrollTop() >= 300) ? $backToTop.removeAttribute("class", "hide"): $backToTop.setAttribute("class", "hide");
         imgsAjax($ajaxImgs);
     };
     scrollCallback();
@@ -96,17 +96,17 @@ window.onload = function() {
     });
 
     //返回顶部
-	$backToTop.onclick = function() {
-	    cancelAnimationFrame(timer);
-	    timer = requestAnimationFrame(function fn() {
-	        var sTop = getScrollTop();
-	        if (sTop > 0) {
-	            $body.scrollTop = document.documentElement.scrollTop = sTop - 50;
-	            timer = requestAnimationFrame(fn);
-	        } else {
-	            cancelAnimationFrame(timer);
-	        }
-	    });
-	};
+    $backToTop.onclick = function() {
+        cancelAnimationFrame(timer);
+        timer = requestAnimationFrame(function fn() {
+            var sTop = getScrollTop();
+            if (sTop > 0) {
+                $body.scrollTop = document.documentElement.scrollTop = sTop - 50;
+                timer = requestAnimationFrame(fn);
+            } else {
+                cancelAnimationFrame(timer);
+            }
+        });
+    };
 
 };
