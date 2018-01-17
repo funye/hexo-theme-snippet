@@ -150,7 +150,7 @@ gitment:
 
 ### 友言评论
 uyan:
-  enable: false
+  enable: true
   uyan_id: 2154669
 
 
